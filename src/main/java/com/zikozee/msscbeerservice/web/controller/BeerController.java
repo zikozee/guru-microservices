@@ -1,5 +1,6 @@
 package com.zikozee.msscbeerservice.web.controller;
 
+import com.zikozee.msscbeerservice.services.BeerService;
 import com.zikozee.msscbeerservice.web.model.BeerDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -21,24 +22,23 @@ import java.util.UUID;
 public class BeerController {
     public static final String BASE_URL = "api/v1/beer/";
 
+    private final BeerService beerService;
+
     @GetMapping(path = "{beerId}")
     public ResponseEntity<BeerDto> getBeerById(@PathVariable("beerId") UUID beerId){
 
-        // TODO: 5/3/2022
-        return  new ResponseEntity<>(BeerDto.builder().build(), HttpStatus.OK);
+        return  new ResponseEntity<>(beerService.getById(beerId), HttpStatus.OK);
     }
 
     @PostMapping
     public ResponseEntity<BeerDto> saveNewBeer(@RequestBody @Validated BeerDto beerDto){
 
-        // TODO: 5/3/2022
-        return  new ResponseEntity<>(BeerDto.builder().build(), HttpStatus.CREATED);
+        return  new ResponseEntity<>(beerService.saveNewBeer(beerDto), HttpStatus.CREATED);
     }
 
     @PutMapping(path = "{beerId}")
-    public ResponseEntity updateBeerId(@PathVariable("beerId") UUID beerId, @RequestBody  @Validated BeerDto beerDto){
+    public ResponseEntity<BeerDto> updateBeerId(@PathVariable("beerId") UUID beerId, @RequestBody  @Validated BeerDto beerDto){
 
-        // TODO: 5/3/2022  
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(beerService.updateBeer(beerId, beerDto),HttpStatus.NO_CONTENT);
     }
 }
