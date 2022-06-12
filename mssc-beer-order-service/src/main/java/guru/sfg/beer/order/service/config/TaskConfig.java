@@ -8,7 +8,8 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
- * Task Configuration - enable asyc tasks
+ * @author: Ezekiel Eromosei
+ * @created: 12 June 2022
  */
 @EnableScheduling
 @EnableAsync

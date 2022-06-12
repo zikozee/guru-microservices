@@ -26,6 +26,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
+/**
+ * @author: Ezekiel Eromosei
+ * @created: 12 June 2022
+ */
+
 @RequestMapping("/api/v1/customers/{customerId}/")
 @RestController
 public class BeerOrderController {

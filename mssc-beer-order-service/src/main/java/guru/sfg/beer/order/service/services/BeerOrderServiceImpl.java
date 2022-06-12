@@ -37,6 +37,11 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+/**
+ * @author: Ezekiel Eromosei
+ * @created: 12 June 2022
+ */
+
 @Slf4j
 @Service
 public class BeerOrderServiceImpl implements BeerOrderService {
