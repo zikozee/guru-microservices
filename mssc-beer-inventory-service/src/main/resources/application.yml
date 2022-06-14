@@ -1,0 +1,6 @@
+logging:
+  level:
+    zikozee: debug
+
+server:
+  port: 8082

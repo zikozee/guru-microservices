@@ -14,20 +14,18 @@
  *     You should have received a copy of the GNU General Public License
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package zikozee.beer.order.service.repositories;
+package zikozee.sfg.beer.inventory.service.repositories;
 
-import org.springframework.data.repository.query.Param;
-import zikozee.beer.order.service.domain.Customer;
+import zikozee.sfg.beer.inventory.service.domain.BeerInventory;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 import java.util.UUID;
 
 /**
- * @author: Ezekiel Eromosei
- * @created: 12 June 2022
+ * Created by jt on 2019-01-26.
  */
+public interface BeerInventoryRepository extends JpaRepository<BeerInventory, UUID> {
 
-public interface CustomerRepository extends JpaRepository<Customer, UUID> {
-    List<Customer> findAllByCustomerNameLike(@Param("customerName") String customerName);
+    List<BeerInventory> findAllByBeerId(UUID beerId);
 }
