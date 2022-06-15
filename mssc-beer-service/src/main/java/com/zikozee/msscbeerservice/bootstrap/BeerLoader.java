@@ -13,7 +13,7 @@ import java.math.BigDecimal;
  * @created: 14 May 2022
  */
 
-@Component
+//@Component
 @RequiredArgsConstructor
 public class BeerLoader implements CommandLineRunner {
 
