@@ -40,6 +40,8 @@ jobs:
 
             # run tests!
             - run: mvn integration-test
+
+    #--job 2 --
     build-job2:
         docker:
             # specify the version you desire here
@@ -76,6 +78,8 @@ jobs:
 
             # run tests!
             - run: mvn integration-test
+
+    #--job 3--
     build-job3:
         docker:
             # specify the version you desire here
